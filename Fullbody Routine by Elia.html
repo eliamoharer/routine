@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>elia routine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- TailwindCSS via CDN for elegant styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Soft scrollbar for a polished feel */
+    ::-webkit-scrollbar {width: 8px; height: 8px;}
+    ::-webkit-scrollbar-thumb {background: #cbd5e1; border-radius: 4px;}
+    
+    /* Hide variations by default */
+    .variations-folder {
+      display: none;
+    }
+    
+    /* Show variations when toggle is active */
+    .show-variations .variations-folder {
+      display: block;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans">
+
+  <!-- ─────────────────── Header ─────────────────── -->
+  <header class="sticky top-0 z-50 backdrop-blur bg-white/80 shadow-sm">
+    <div class="max-w-5xl mx-auto flex items-center justify-between p-4">
+      <div>
+        <h1 class="text-2xl font-bold tracking-tight">my fullbody routine</h1>
+        <p class="text-sm text-slate-500 mt-1">Last updated: July 11, 2025</p>
+      </div>
+
+      <!-- Toggle Variations Button -->
+      <div class="mr-4">
+        <button id="toggle-variations" class="px-3 py-2 rounded-lg bg-slate-600 text-white font-medium hover:bg-slate-700 transition">Show Variations</button>
+      </div>
+
+      <!-- Download Buttons -->
+      <div class="flex gap-2">
+        <button data-mode="minimal" class="download-btn px-3 py-2 rounded-lg bg-indigo-600 text-white font-medium hover:bg-indigo-700 transition">Download Minimal</button>
+        <button data-mode="informational" class="download-btn px-3 py-2 rounded-lg bg-emerald-600 text-white font-medium hover:bg-emerald-700 transition">Download Info</button>
+        <button data-mode="detailed" class="download-btn px-3 py-2 rounded-lg bg-rose-600 text-white font-medium hover:bg-rose-700 transition">Download Detailed</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ─────────────────── Main Content ─────────────────── -->
+  <main class="max-w-5xl mx-auto my-8 space-y-4">
+
+    <!-- ====== Legs ====== -->
+    <details class="group">
+      <summary class="cursor-pointer select-none bg-white rounded-xl shadow group-open:shadow-lg transition p-4 flex items-center justify-between">
+        <span class="text-lg font-semibold">Legs</span>
+        <svg class="w-5 h-5 text-slate-500 group-open:rotate-180 transition" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </summary>
+      <div class="pl-6 py-3 space-y-3">
+        <div class="exercise bg-white rounded-lg shadow p-4 hover:shadow-md transition cursor-pointer"
+             data-name="Hamstring Curls"
+             data-sets="2" data-reps="8" data-rest="60s"
+             data-form="Keep hips on the pad; avoid using lower back. Control the negative portion of the rep.">
+          <header class="flex items-center justify-between">
+            <span class="font-medium">Hamstring Curls</span>
+            <span class="text-sm text-slate-500">2 × 8 · 60s</span>
+          </header>
+          <p class="exercise-info mt-2 text-sm text-slate-600 hidden">
+            Keep hips on the pad; avoid using lower back. Control the negative portion of the rep.
+          </p>
+        </div>
+        <div class="exercise bg-white rounded-lg shadow p-4 hover:shadow-md transition cursor-pointer"
+             data-name="Leg Extensions"
+             data-sets="2" data-reps="8" data-rest="60s"
+             data-form="Pause at the top of the movement. Avoid swinging the weight up; focus on quad contraction.">
+          <header class="flex items-center justify-between">
+            <span class="font-medium">Leg Extensions</span>
+            <span class="text-sm text-slate-500">2 × 8 · 60s</span>
+          </header>
+          <p class="exercise-info mt-2 text-sm text-slate-600 hidden">
+            Pause at the top of the movement. Avoid swinging the weight up; focus on quad contraction.
+          </p>
+        </div>
+        <details class="group variations-folder">
+          <summary class="cursor-pointer select-none bg-slate-100 rounded-lg p-3 flex items-center justify-between">
+            <span class="font-medium text-slate-700">Variations</span>
+            <svg class="w-4 h-4 text-slate-500 group-open:rotate-180 transition" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="pl-5 py-2 space-y-3">
+            <div class="exercise variation bg-white rounded-lg shadow p-4 hover:shadow-md transition cursor-pointer"
+                 data-name="Squats"
+                 data-sets="3" data-reps="8" data-rest="60-180s"
+                 data-form="Keep chest up and back straight. Break at the hips and knees simultaneously.">
+              <header class="flex items-center justify-between">
+                <span class="font-medium">Squats</span>
+                <span class="text-sm text-slate-500">3 × 8 · 60‑180s</span>
+              </header>
+              <p class="exercise-info mt-2 text-sm text-slate-600 hidden">
+                Keep chest up and back straight. Break at the hips and knees simultaneously.
+              </p>
+            </div>
+          </div>
+        </details>
+      </div>
+    </details>
+
+    <!-- ====== Back & Biceps ====== -->
+    <details class="group">
+      <summary class="cursor-pointer select-none bg-white rounded-xl shadow group-open:shadow-lg transition p-4 flex items-center justify-between">
+        <span class="text-lg font-semibold">Back & Biceps</span>
+        <svg class="w-5 h-5 text-slate-500 group-open:rotate-180 transition" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </summary>
+      <div class="pl-6 py-3 space-y-3">
+        <div class="exercise bg-white rounded-lg shadow p-4 hover:shadow-md transition cursor-pointer"
+             data-name="Back Rows"
+             data-sets="3" data-reps="8" data-rest="60-90s"
+             data-form="Pull towards your lower chest, squeezing shoulder blades. Alternate between overhand and underhand grips.">
+          <header class="flex items-center justify-between">
+            <span class="font-medium">Back Rows</span>
+            <span class="text-sm text-slate-500">3 × 8 · 60-90s</span>
+          </header>
+          <p class="exercise-info mt-2 text-sm text-slate-600 hidden">
+            Pull towards your lower chest, squeezing shoulder blades. Alternate between overhand and underhand grips.
+          </p>
+        </div>
+        <details class="group variations-folder">
+          <summary class="cursor-pointer select-none bg-slate-100 rounded-lg p-3 flex items-center justify-between">
+            <span class="font-medium text-slate-700">Variations</span>
+            <svg class="w-4 h-4 text-slate-500 group-open:rotate-180 transition" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="pl-5 py-2 space-y-3">
+            <div class="exercise variation bg-white rounded-lg shadow p-4 hover:shadow-md transition cursor-pointer"
+                 data-name="Lat Pulldowns"
+                 data-sets="3" data-reps="8" data-rest="60-90s"
+                 data-form="Lead with your elbows and pull the bar to your upper chest. Avoid using momentum.">
+              <header class="flex items-center justify-between">
+                <span class="font-medium">Lat Pulldowns</span>
+                <span class="text-sm text-slate-500">3 × 8 · 60-90s</span>
+              </header>
+              <p class="exercise-info mt-2 text-sm text-slate-600 hidden">
+                Lead with your elbows and pull the bar to your upper chest. Avoid using momentum.
+              </p>
+            </div>
+          </div>
+        </details>
+        <div class="exercise bg-white rounded-lg shadow p-4 hover:shadow-md transition cursor-pointer"
+             data-name="Hammer Curls + Chin-ups Superset"
+             data-sets="3" data-reps="8" data-rest="60-180s"
+             data-form="For curls, keep elbows pinned to your sides. For chin-ups, use a full range of motion.">
+          <header class="flex items-center justify-between">
+            <span class="font-medium">Hammer Curls + Chin-ups Superset</span>
+            <span class="text-sm text-slate-500">3 × 8 · 60-180s</span>
+          </header>
+          <p class="exercise-info mt-2 text-sm text-slate-600 hidden">
+            For curls, keep elbows pinned to your sides. For chin-ups, use a full range of motion.
+          </p>
+        </div>
+        <details class="group variations-folder">
+          <summary class="cursor-pointer select-none bg-slate-100 rounded-lg p-3 flex items-center justify-between">
+            <span class="font-medium text-slate-700">Variations</span>
+            <svg class="w-4 h-4 text-slate-500 group-open:rotate-180 transition" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="pl-5 py-2 space-y-3">
+            <div class="exercise variation bg-white rounded-lg shadow p-4 hover:shadow-md transition cursor-pointer"
+                 data-name="Incline Curls"
+                 data-sets="3" data-reps="8" data-rest="60s"
+                 data-form="Set bench to an incline. Let arms hang down fully to get a good stretch on the bicep.">
+              <header class="flex items-center justify-between">
+                <span class="font-medium">Incline Curls</span>
+                <span class="text-sm text-slate-500">3 × 8 · 60s</span>
+              </header>
+              <p class="exercise-info mt-2 text-sm text-slate-600 hidden">
+                Set bench to an incline. Let arms hang down fully to get a good stretch on the bicep.
+              </p>
+            </div>
+          </div>
+        </details>
+      </div>
+    </details>
+
+    <!-- ====== Abs (optional) ====== -->
+    <details class="group">
+      <summary class="cursor-pointer select-none bg-white rounded-xl shadow group-open:shadow-lg transition p-4 flex items-center justify-between">
+        <span class="text-lg font-semibold">Abs (optional)</span>
+        <svg class="w-5 h-5 text-slate-500 group-open:rotate-180 transition" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </summary>
+      <div class="pl-6 py-3 space-y-3">
+        <div class="exercise bg-white rounded-lg shadow p-4 hover:shadow-md transition cursor-pointer"
+             data-name="Hanging Leg Raises"
+             data-sets="3" data-reps="8" data-rest="60s"
+             data-form="Avoid swinging. Engage your core to lift your legs. Keep legs straight for more difficulty.">
+          <header class="flex items-center justify-between">
+            <span class="font-medium">Hanging Leg Raises</span>
+            <span class="text-sm text-slate-500">3 × 8 · 60s</span>
+          </header>
+          <p class="exercise-info mt-2 text-sm text-slate-600 hidden">
+            Avoid swinging. Engage your core to lift your legs. Keep legs straight for more difficulty.
+          </p>
+        </div>
+        <details class="group variations-folder">
+          <summary class="cursor-pointer select-none bg-slate-100 rounded-lg p-3 flex items-center justify-between">
+            <span class="font-medium text-slate-700">Variations</span>
+            <svg class="w-4 h-4 text-slate-500 group-open:rotate-180 transition" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="pl-5 py-2 space-y-3">
+            <div class="exercise variation bg-white rounded-lg shadow p-4 hover:shadow-md transition cursor-pointer"
+                 data-name="Crunches"
+                 data-sets="3" data-reps="8" data-rest="60s"
+                 data-form="Lift your shoulder blades off the floor. Don't pull on your neck.">
+              <header class="flex items-center justify-between">
+                <span class="font-medium">Crunches</span>
+                <span class="text-sm text-slate-500">3 × 8 · 60s</span>
+              </header>
+              <p class="exercise-info mt-2 text-sm text-slate-600 hidden">
+                Lift your shoulder blades off the floor. Don't pull on your neck.
+              </p>
+            </div>
+             <div class="exercise variation bg-white rounded-lg shadow p-4 hover:shadow-md transition cursor-pointer"
+                 data-name="Knee Raises"
+                 data-sets="3" data-reps="8" data-rest="60s"
+                 data-form="Same as leg raises but with bent knees, which is easier for beginners.">
+              <header class="flex items-center justify-between">
+                <span class="font-medium">Knee Raises</span>
+                <span class="text-sm text-slate-500">3 × 8 · 60s</span>
+              </header>
+              <p class="exercise-info mt-2 text-sm text-slate-600 hidden">
+                Same as leg raises but with bent knees, which is easier for beginners.
+              </p>
+            </div>
+             <div class="exercise variation bg-white rounded-lg shadow p-4 hover:shadow-md transition cursor-pointer"
+                 data-name="Twisting Hanging Leg Raises"
+                 data-sets="3" data-reps="8" data-rest="60s"
+                 data-form="As you lift your legs, twist your torso to bring your legs to one side to target the obliques.">
+              <header class="flex items-center justify-between">
+                <span class="font-medium">Twisting Hanging Leg Raises</span>
+                <span class="text-sm text-slate-500">3 × 8 · 60s</span>
+              </header>
+              <p class="exercise-info mt-2 text-sm text-slate-600 hidden">
+                As you lift your legs, twist your torso to bring your legs to one side to target the obliques.
+              </p>
+            </div>
+          </div>
+        </details>
+      </div>
+    </details>
+
+    <!-- ====== Chest, Shoulders, Triceps ====== -->
+    <details class="group">
+      <summary class="cursor-pointer select-none bg-white rounded-xl shadow group-open:shadow-lg transition p-4 flex items-center justify-between">
+        <span class="text-lg font-semibold">Chest, Shoulders, Triceps</span>
+        <svg class="w-5 h-5 text-slate-500 group-open:rotate-180 transition" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </summary>
+      <div class="pl-6 py-3 space-y-3">
+        <div class="exercise bg-white rounded-lg shadow p-4 hover:shadow-md transition cursor-pointer"
+             data-name="Cable Chest Press"
+             data-sets="3" data-reps="8" data-rest="60-90s"
+             data-form="Keep shoulders down and back. Focus on squeezing the chest muscles at the peak of the movement.">
+          <header class="flex items-center justify-between">
+            <span class="font-medium">Cable Chest Press</span>
+            <span class="text-sm text-slate-500">3 × 8 · 60-90s</span>
+          </header>
+          <p class="exercise-info mt-2 text-sm text-slate-600 hidden">
+            Keep shoulders down and back. Focus on squeezing the chest muscles at the peak of the movement.
+          </p>
+        </div>
+        <details class="group variations-folder">
+          <summary class="cursor-pointer select-none bg-slate-100 rounded-lg p-3 flex items-center justify-between">
+            <span class="font-medium text-slate-700">Variations</span>
+            <svg class="w-4 h-4 text-slate-500 group-open:rotate-180 transition" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="pl-5 py-2 space-y-3">
+            <div class="exercise variation bg-white rounded-lg shadow p-4 hover:shadow-md transition cursor-pointer"
+                 data-name="Bench Press"
+                 data-sets="3" data-reps="8" data-rest="60-120s"
+                 data-form="Lower bar to mid-chest. Keep feet planted and don't bounce the bar off your chest.">
+              <header class="flex items-center justify-between">
+                <span class="font-medium">Bench Press</span>
+                <span class="text-sm text-slate-500">3 × 8 · 60-120s</span>
+              </header>
+              <p class="exercise-info mt-2 text-sm text-slate-600 hidden">
+                Lower bar to mid-chest. Keep feet planted and don't bounce the bar off your chest.
+              </p>
+            </div>
+             <div class="exercise variation bg-white rounded-lg shadow p-4 hover:shadow-md transition cursor-pointer"
+                 data-name="Incline Bench Press"
+                 data-sets="3" data-reps="8" data-rest="60-120s"
+                 data-form="Targets the upper chest. Don't let elbows flare too wide.">
+              <header class="flex items-center justify-between">
+                <span class="font-medium">Incline Bench Press</span>
+                <span class="text-sm text-slate-500">3 × 8 · 60-120s</span>
+              </header>
+              <p class="exercise-info mt-2 text-sm text-slate-600 hidden">
+                Targets the upper chest. Don't let elbows flare too wide.
+              </p>
+            </div>
+          </div>
+        </details>
+        <div class="exercise bg-white rounded-lg shadow p-4 hover:shadow-md transition cursor-pointer"
+             data-name="Tricep Pushdowns + Dips Superset"
+             data-sets="3" data-reps="8" data-rest="60-180s"
+             data-form="Pushdowns: keep elbows tight to your body. Dips: stay upright to target triceps.">
+          <header class="flex items-center justify-between">
+            <span class="font-medium">Tricep Pushdowns + Dips Superset</span>
+            <span class="text-sm text-slate-500">3 × 8 · 60-180s</span>
+          </header>
+          <p class="exercise-info mt-2 text-sm text-slate-600 hidden">
+            Pushdowns: keep elbows tight to your body. Dips: stay upright to target triceps.
+          </p>
+        </div>
+        <details class="group variations-folder">
+          <summary class="cursor-pointer select-none bg-slate-100 rounded-lg p-3 flex items-center justify-between">
+            <span class="font-medium text-slate-700">Variations</span>
+            <svg class="w-4 h-4 text-slate-500 group-open:rotate-180 transition" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="pl-5 py-2 space-y-3">
+            <div class="exercise variation bg-white rounded-lg shadow p-4 hover:shadow-md transition cursor-pointer"
+                 data-name="Tricep Extension"
+                 data-sets="3" data-reps="8" data-rest="60s"
+                 data-form="Can be done with cables or dumbbells. Keep upper arms stationary.">
+              <header class="flex items-center justify-between">
+                <span class="font-medium">Tricep Extension</span>
+                <span class="text-sm text-slate-500">3 × 8 · 60s</span>
+              </header>
+              <p class="exercise-info mt-2 text-sm text-slate-600 hidden">
+                Can be done with cables or dumbbells. Keep upper arms stationary.
+              </p>
+            </div>
+            <div class="exercise variation bg-white rounded-lg shadow p-4 hover:shadow-md transition cursor-pointer"
+                 data-name="Shoulder Press"
+                 data-sets="3" data-reps="8" data-rest="60s"
+                 data-form="Press overhead without excessively arching your lower back. Control the weight on the way down.">
+              <header class="flex items-center justify-between">
+                <span class="font-medium">Shoulder Press</span>
+                <span class="text-sm text-slate-500">3 × 8 · 60s</span>
+              </header>
+              <p class="exercise-info mt-2 text-sm text-slate-600 hidden">
+                Press overhead without excessively arching your lower back. Control the weight on the way down.
+              </p>
+            </div>
+          </div>
+        </details>
+        <div class="exercise bg-white rounded-lg shadow p-4 hover:shadow-md transition cursor-pointer"
+             data-name="Lateral Raise"
+             data-sets="3" data-reps="12" data-rest="60s"
+             data-form="Lead with your elbows and raise arms to shoulder height. Avoid using momentum.">
+          <header class="flex items-center justify-between">
+            <span class="font-medium">Lateral Raise</span>
+            <span class="text-sm text-slate-500">3 × 12 · 60s</span>
+          </header>
+          <p class="exercise-info mt-2 text-sm text-slate-600 hidden">
+            Lead with your elbows and raise arms to shoulder height. Avoid using momentum.
+          </p>
+        </div>
+      </div>
+    </details>
+
+  </main>
+
+  <!-- ─────────────────── Footer ─────────────────── -->
+  <footer class="text-center py-8 text-slate-400 text-sm">
+    © <span id="year"></span> • mr cooper enterprises
+  </footer>
+
+  <!-- ─────────────────── Scripts ─────────────────── -->
+  <script>
+    /* Dynamic year in footer */
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    /* Toggle variations visibility */
+    let variationsVisible = false;
+    const toggleBtn = document.getElementById('toggle-variations');
+    const body = document.body;
+    
+    toggleBtn.addEventListener('click', () => {
+      variationsVisible = !variationsVisible;
+      if (variationsVisible) {
+        body.classList.add('show-variations');
+        toggleBtn.textContent = 'Hide Variations';
+        toggleBtn.classList.remove('bg-slate-600', 'hover:bg-slate-700');
+        toggleBtn.classList.add('bg-slate-800', 'hover:bg-slate-900');
+      } else {
+        body.classList.remove('show-variations');
+        toggleBtn.textContent = 'Show Variations';
+        toggleBtn.classList.remove('bg-slate-800', 'hover:bg-slate-900');
+        toggleBtn.classList.add('bg-slate-600', 'hover:bg-slate-700');
+      }
+    });
+
+    /* Toggle exercise detailed info */
+    document.querySelectorAll('.exercise').forEach(card => {
+      card.addEventListener('click', e => {
+        if (e.target.closest('.download-btn')) return; // ignore clicks on download buttons
+        card.querySelector('.exercise-info').classList.toggle('hidden');
+      });
+    });
+
+    /* Attach download handlers */
+    document.querySelectorAll('.download-btn').forEach(btn => {
+      btn.addEventListener('click', () => downloadRoutine(btn.dataset.mode));
+    });
+
+    /* ───────── Download Routine Logic ───────── */
+    function downloadRoutine(mode) {
+      const lines = [];
+      const groups = document.querySelectorAll('main > details');
+
+      groups.forEach(group => {
+        const groupName = group.querySelector('summary span').textContent.trim();
+        lines.push(`# ${groupName}`);
+        collectExercises(group.querySelector('div'), 1, mode, false, lines);
+        lines.push(''); // blank line between muscle groups for readability
+      });
+
+      // Create and trigger the file download
+      const blob = new Blob([lines.join('\n')], { type: 'text/plain' });
+      const href = URL.createObjectURL(blob);
+      const a = Object.assign(document.createElement('a'), { href, download: `full-body-routine-${mode}.txt` });
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(href);
+    }
+
+    /* Recursive helper to traverse routine tree */
+    function collectExercises(container, depth, mode, isVariation, output) {
+      const indent = '  '.repeat(depth-1);
+      container.querySelectorAll(':scope > .exercise, :scope > details').forEach(item => {
+        // Exercise card
+        if (item.classList.contains('exercise')) {
+          if (isVariation && mode !== 'detailed') return; // skip variations unless in detailed mode
+
+          const { name, sets, reps, rest, form } = item.dataset;
+          let line = `${indent}- ${name} — Sets: ${sets}, Reps: ${reps}, Rest: ${rest}`;
+          if (isVariation) {
+            line = `${indent}  - ${name} — Sets: ${sets}, Reps: ${reps}, Rest: ${rest}`;
+          }
+          output.push(line);
+
+
+          /* Include form cues for informational & detailed */
+          if (mode !== 'minimal') output.push(`${indent}    ${form}`);
+        }
+        // Nested folder (e.g., "Variations")
+        else if (item.tagName.toLowerCase() === 'details') {
+          const label = item.querySelector('summary span').textContent.trim();
+          if (label.toLowerCase() === 'variations' && mode !== 'detailed') return;
+
+          output.push(`${indent}  ${label}:`);
+          collectExercises(item.querySelector('div'), depth + 1, mode, label.toLowerCase() === 'variations', output);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
